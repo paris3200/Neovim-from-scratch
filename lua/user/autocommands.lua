@@ -29,6 +29,10 @@ vim.cmd [[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 
+  augroup _email_process
+    autocmd VimLeave /tmp/neomutt-* !/home/jason/bin/email_process %  
+  augroup end
+
   augroup _ledger
     autocmd BufWritePre *.ldg :LedgerAlignBuffer
   augroup end
